@@ -6,10 +6,12 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed;
     public float jumpPower;
-    private Rigidbody2D rb;
-    private bool isGrounded;
     public float lowJumpMultiplier = 2f;
     public float fallMultiplier = 2.5f;
+    public LayerMask whatIsGround;
+
+    private Rigidbody2D rb;
+    private bool isGrounded;
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(transform.position + Vector3.down * 0.5f, 0.2f, whatIsGround);
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(-speed, 0, 0);
@@ -30,7 +34,6 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            isGrounded = false;
         }
 
         if (rb.velocity.y < 0)
@@ -41,18 +44,6 @@ public class PlayerMove : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-        isGrounded = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        
-        isGrounded = false;
     }
 
     void Awake()

@@ -396,6 +396,9 @@ MonoBehaviour:
   jumpPower: 10
   lowJumpMultiplier: 2
   fallMultiplier: 2.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &665160031
 Rigidbody2D:
   serializedVersion: 4
@@ -549,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blinkDuration: 2
   blinkInterval: 0.1
+  knockbackForce: 5
 --- !u!1 &785285476
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +564,7 @@ GameObject:
   - component: {fileID: 785285479}
   - component: {fileID: 785285478}
   - component: {fileID: 785285477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -721,7 +725,7 @@ GameObject:
   - component: {fileID: 2034953068}
   - component: {fileID: 2034953067}
   - component: {fileID: 2034953066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -834,7 +838,7 @@ Transform:
   m_GameObject: {fileID: 2034953065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.89, y: -2.53, z: 0}
+  m_LocalPosition: {x: -2.89, y: -2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -851,7 +855,7 @@ GameObject:
   - component: {fileID: 2105975769}
   - component: {fileID: 2105975768}
   - component: {fileID: 2105975767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
