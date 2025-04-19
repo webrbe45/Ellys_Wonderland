@@ -398,7 +398,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!50 &665160031
 Rigidbody2D:
   serializedVersion: 4
@@ -553,6 +553,7 @@ MonoBehaviour:
   blinkDuration: 2
   blinkInterval: 0.1
   knockbackForce: 5
+  damageCooldown: 2
 --- !u!1 &785285476
 GameObject:
   m_ObjectHideFlags: 0
